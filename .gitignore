@@ -1,3 +1,12 @@
+# OS
+.DS_Store
+
+#Python
+__pycache__?
+*.pyc
+.venv/
+venv
+
 # Local .terraform directories
 .terraform/
 
@@ -35,3 +44,10 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+#Notebooks
+.ipynb_checkpoints/
+
+#Local artifacts
+out/
+dist/
