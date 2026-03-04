@@ -126,3 +126,10 @@ Run `sql/team_efficiency.sql` in Databricks SQL or warehouse.
 Small, secure, enforceable guardrails > broad but brittle architecture.
 
 This implementation prioritizes security, cost control, and operational simplicity.
+
+## Tradeoffs
+
+- Used overwrite mode for deterministic idempotency instead of incremental MERGE to keep the solution simple within the timebox.
+- IAM CI role is scoped broadly for demonstration; production would scope to specific ARNs.
+- TLS enforcement added at bucket policy level rather than SCP for portability.
+- Basic DQ checks included; production would add data quality framework (e.g., Great Expectations).
