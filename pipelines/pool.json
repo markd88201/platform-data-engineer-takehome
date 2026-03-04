@@ -1,0 +1,11 @@
+{
+  "instance_pool_name": "spot-job-pool",
+  "min_idle_instances": 0,
+  "max_capacity": 5,
+  "node_type_id": "m5.xlarge",
+  "aws_attributes": {
+    "availability": "SPOT_WITH_FALLBACK",
+    "zone_id": "auto"
+  },
+  "idle_instance_autotermination_minutes": 10
+}
