@@ -1,0 +1,30 @@
+{
+  "name": "baseball-ingestion-job",
+  "tasks": [
+    {
+      "task_key": "ingest_csv_to_delta",
+      "notebook_task": {
+        "notebook_path": "/Repos/baseball/ingestion"
+      },
+      "job_cluster_key": "job_cluster"
+    }
+  ],
+  "job_clusters": [
+    {
+      "job_cluster_key": "job_cluster",
+      "new_cluster": {
+        "spark_version": "13.3.x-scala2.12",
+        "instance_pool_id": "<POOL_ID>",
+        "autotermination_minutes": 15,
+        "num_workers": 2
+      }
+    }
+  ],
+  "max_concurrent_runs": 1,
+  "timeout_seconds": 3600,
+  "email_notifications": {
+    "on_failure": ["your-email@example.com"]
+  },
+  "retry_on_timeout": true,
+  "max_retries": 2
+}
